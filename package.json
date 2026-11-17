@@ -1,0 +1,60 @@
+{
+  "name": "dsh-live-run",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "实时运行面板：任务运行时在一个 tab 里同时看到当前文件、文件写入过程、命令输出全过程",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json",
+    "./locale/*": "./locale/*",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Prcjimmy1015/dsh-live-run.git"
+  },
+  "homepage": "https://github.com/Prcjimmy1015/dsh-live-run#readme",
+  "bugs": {
+    "url": "https://github.com/Prcjimmy1015/dsh-live-run/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "better-sidebar",
+    "jobs",
+    "live-output"
+  ],
+  "author": "Prcjimmy1015",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web"
+    },
+    "manifestVersion": 1
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "locale",
+    "README.md",
+    "LICENSE"
+  ],
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node tools/smoke.mjs",
+    "verify": "node tools/verify-install.mjs",
+    "feasibility": "node tools/feasibility-one-line.mjs"
+  },
+  "license": "MIT"
+}

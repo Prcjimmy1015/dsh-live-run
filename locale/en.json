@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Live Run (dsh-live-run)",
+    "description": "One pane showing the current file, how it is being written (with diffs), and live command output as it streams."
+  }
+}

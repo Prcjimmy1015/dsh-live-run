@@ -1,0 +1,4 @@
+# dsh-live-run 以一条 profile 层接入：loader row 扫描到 dsh.client 后把浏览器半体装进页面。
+- insert:
+    - id: dsh-live-run
+      name: 'dsh-live-run'

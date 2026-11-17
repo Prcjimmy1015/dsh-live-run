@@ -1,0 +1,10 @@
+# Dependencies (this plugin has none at runtime; react is a page platform seed)
+node_modules/
+
+# Output of tools/feasibility-one-line.mjs
+tools/.feasibility/
+
+# Editor / OS noise
+*.log
+.DS_Store
+Thumbs.db
