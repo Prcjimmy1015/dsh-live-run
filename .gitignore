@@ -8,3 +8,7 @@ tools/.feasibility/
 *.log
 .DS_Store
 Thumbs.db
+
+# Packed release artifact
+*.tgz
+

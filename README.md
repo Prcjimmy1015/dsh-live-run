@@ -66,17 +66,30 @@ LICENSE                      MIT
 
 ## 安装
 
-需要先有 **dsh-better-sidebar**（本插件通过它的 `registerTab` 提供面板），以及一个 DSH Web profile。
+前置：**dsh-better-sidebar**（本插件通过它的 `registerTab` 提供面板；没有它不会渲染任何东西，也不影响 DSH 启动）。
 
 ```bash
-git clone https://github.com/Prcjimmy1015/dsh-live-run.git
-cd ~/.dsh
-dsh plugin --profile desktop add "file:<clone 的绝对路径>"
+# 从 GitHub 源码安装（多数网络可用）
+dsh plugin --profile web add github:Prcjimmy1015/dsh-live-run
+
+# 若 github: 装不上（codeload 被代理阻断等），改用预构建 tarball
+dsh plugin --profile web add "https://github.com/Prcjimmy1015/dsh-live-run/releases/download/v0.1.0/dsh-live-run-0.1.0.tgz"
 ```
 
-装完刷新页面，右侧栏 **+** → 「实时运行」。
+装完刷新页面，右侧栏 **+** → 「实时运行」。`--profile` 填你实际使用的 profile（`web` / `desktop` 等）。
 
-> 用 `file:` 而不是 `github:`：本机 codeload.github.com 经代理不可用，`github:`/`git+https://` 形式的依赖会 fetch failed（这是环境限制，不是插件问题）。
+> 本机 codeload.github.com 经代理不可用时，`github:` 形式会 fetch failed —— 这是网络限制，不是插件问题，换 tarball 即可。
+
+## 作为插件索引源
+
+本仓库带一份 [format-1 插件索引](index.json)。在 DSH 0.2.1+ 里打开 **插件 → 实验性插件 → 自定义插件索引**，添加索引地址即可在「发现」里看到并安装：
+
+```
+https://cdn.jsdelivr.net/gh/Prcjimmy1015/dsh-live-run@main/index.json
+```
+
+（Discover 给每个索引源 15 秒超时，所以用 jsDelivr 而不是 raw.githubusercontent。）
+
 
 ## 验证
 

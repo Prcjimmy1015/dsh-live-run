@@ -1,7 +1,6 @@
 {
   "name": "dsh-live-run",
   "version": "0.1.0",
-  "private": true,
   "type": "module",
   "description": "实时运行面板：任务运行时在一个 tab 里同时看到当前文件、文件写入过程、命令输出全过程",
   "main": "lib/index.js",
@@ -46,6 +45,7 @@
     "LICENSE"
   ],
   "peerDependencies": {
+    "dsh-better-sidebar": ">=0.12.0",
     "react": "^18.2.0"
   },
   "engines": {
@@ -55,6 +55,9 @@
     "test": "node tools/smoke.mjs",
     "verify": "node tools/verify-install.mjs",
     "feasibility": "node tools/feasibility-one-line.mjs"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "license": "MIT"
 }
